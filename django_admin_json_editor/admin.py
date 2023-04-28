@@ -41,13 +41,13 @@ class JSONEditorWidget(forms.Widget):
 
     @property
     def media(self):
-        css = {
+        css = self._editor_options.get('css') or {
             'all': [
                 'django_admin_json_editor/fontawesome/css/font-awesome.min.css',
                 'django_admin_json_editor/style.css',
             ]
         }
-        js = [
+        js = self._editor_options.get('js') or [
             'django_admin_json_editor/jsoneditor/jsoneditor.min.js',
         ]
 
